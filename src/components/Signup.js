@@ -26,6 +26,7 @@ function Signup({ onNavigate }) {
     e.preventDefault();
     if (formData.acceptedTerms) {
       try {
+        // Send signup request to backend
         const response = await axios.post('http://localhost:5000/api/users/signup', {
           firstName: formData.first,  // Change 'first' to 'firstName'
           lastName: formData.last,    // Change 'last' to 'lastName'
@@ -34,7 +35,14 @@ function Signup({ onNavigate }) {
           phone: formData.phone,
           address: formData.address,
         });
-        alert('Signup Successful!');
+  
+        // Log the response or use it in some way
+        console.log('Signup Response:', response.data);
+  
+        // Optional: Store user data in localStorage or handle further
+        localStorage.setItem('userId', response.data.userId); // Example usage
+  
+        alert(`Signup Successful! Welcome, ${response.data.firstName}!`);
         onNavigate(); // Navigate to the next page after successful signup
       } catch (err) {
         setError(err.response?.data?.error || 'An error occurred during signup.');
@@ -44,6 +52,7 @@ function Signup({ onNavigate }) {
       alert('You must accept the terms and conditions to proceed.');
     }
   };
+  
   
 
   return (

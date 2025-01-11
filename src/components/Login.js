@@ -12,14 +12,11 @@ function Login({ onLogin }) {
       try {
         // Send login request to backend
         const response = await axios.post('http://localhost:5000/api/users/login', { email, password });
-        
-        // Assuming the response data contains token and userId
-        const { token, userId } = response.data;
-
-        // If login is successful, store the token and userId in localStorage
+  
+        // Store the token and userId in localStorage
         localStorage.setItem('token', response.data.token); // Store JWT token
         localStorage.setItem('userId', response.data.userId); // Store userId
-
+  
         // Trigger onLogin callback to update state in the parent component
         onLogin();
       } catch (error) {
@@ -30,6 +27,7 @@ function Login({ onLogin }) {
       setErrorMessage('Please fill in both fields.');
     }
   };
+  
 
   return (
     <div className="form-container">
