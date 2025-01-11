@@ -1,0 +1,170 @@
+/* General styles */
+body {
+  font-family: 'Georgia', serif;
+  margin: 0;
+  background-color: #f5f5dc; 
+  color: #333;
+}
+
+nav {
+  background-color: #8B4513; 
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+button {
+  background: #D2B48C; 
+  color: #333;
+  border: 1px solid #8B4513;
+  font-size: 14px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #8B4513; 
+  color: white;
+}
+
+/* Form container styles */
+.form-container {
+  margin: 50px auto;
+  padding: 20px;
+  width: 400px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+form input {
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form input:focus {
+  border-color: #8B4513;
+  outline: none;
+}
+
+form label {
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+button {
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Home container styles */
+.home-container {
+  margin: 50px auto;
+  text-align: center;
+  width: 80%;
+}
+
+.home-container h2 {
+  font-size: 28px;
+  color: #8B4513;
+}
+
+.home-container p {
+  font-size: 18px;
+}
+
+/* Book List styles */
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 20px;
+}
+
+.book-card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.book-card h3 {
+  margin: 0 0 10px;
+  color: #8B4513;
+  font-size: 18px;
+}
+
+.book-card p {
+  margin: 0 0 15px;
+  font-size: 14px;
+}
+
+.book-card button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.book-card button:hover {
+  background-color: #218838;
+}
+
+/* Styling for UL (navbar buttons) */
+ul li button {
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-container {
+    width: 90%;
+  }
+
+  .book-list {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
